@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tab_home"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/bottom_home"
+            android:text="@string/icon_home" />
+
+        <RadioButton
+            android:id="@+id/tab_appointment"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/bottom_appointment"
+            android:text="@string/icon_appointment" />
+
+        <RadioButton
+            android:id="@+id/tab_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:button="@null"
+            android:paddingBottom="5dp" />
+
+        <RadioButton
+            android:id="@+id/tab_service"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/bottom_service"
+            android:text="@string/icon_service" />
+
+        <RadioButton
+            android:id="@+id/tab_mine"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/bottom_mine"
+            android:text="@string/icon_mine" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/main_radio"
+        android:background="#bfbfbf" />
+
+    <ImageButton
+        android:id="@+id/postbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/main_radio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:background="@null"
+        android:src="@mipmap/icon_add_a" />
+
+    <com.kuaike.widget.HomeViewPager
+        android:id="@+id/msg_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/divider" />
+
+</RelativeLayout>

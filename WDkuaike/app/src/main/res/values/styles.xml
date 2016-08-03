@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- MainTab选项卡中单选按钮的样式，其中包括了文本、selector、padding、宽高、权重等的设置 -->
+    <style name="main_tab_bottom">
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@drawable/tab_text_color</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- 该处引用drawable下面的一个xml文档(selector) -->
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <!-- 每个按钮的权重，相等则平分尺寸 -->
+        <item name="android:button">@null</item>
+        <!-- 隐藏单选按钮 -->
+        <item name="android:paddingBottom">5.0dip</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">15dip</item>
+        <item name="android:maxHeight">15dip</item>
+    </style>
+
+</resources>
