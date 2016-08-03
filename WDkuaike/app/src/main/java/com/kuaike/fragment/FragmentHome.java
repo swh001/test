@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.kuaike.AESOperator;
 import com.kuaike.base.BaseFragment;
 import com.kuaike.ui.home.adapter.ClassifyGridViewAdapter;
 import com.kuaike.ui.home.adapter.RestaurantListViewAdapter;
@@ -23,10 +24,13 @@ import com.kuaike.widget.ClassifyGridView;
 import com.kuaike.widget.MyListView;
 import com.kuaike.widget.MyScrollView;
 import com.kuaike.widget.filterView.FilterView;
+import com.network.KuaiKeCallBackListener;
+import com.network.KuaiKeStringRequest;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
 import com.tencent.map.geolocation.TencentLocationRequest;
+import com.volley.VolleyError;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +87,18 @@ public class FragmentHome extends BaseFragment implements TencentLocationListene
 
     private void initData() {
         startLocation();//定位
+        new KuaiKeStringRequest(getContext()).get("http://120.25.225.227:8080/user/1", new KuaiKeCallBackListener<String>() {
+            @Override
+            public void onSuccessResponse(String response) {
+                String string = AESOperator.getInstance().decrypt(response);
+                Log.d("response", string);
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
 
     }
 
